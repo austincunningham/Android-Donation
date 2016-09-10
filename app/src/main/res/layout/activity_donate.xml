@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/donateTitle"
-        android:id="@+id/textView"
+        android:id="@+id/donateTitle"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true" />
@@ -24,18 +24,60 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/donatePlease"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
+        android:id="@+id/donatePlease"
+        android:layout_below="@+id/donateTitle"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignEnd="@+id/donateTitle" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/donateButton"
         android:id="@+id/donateButton"
+        android:onClick="donateButtonPressed"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="donateButtonPressed" />
+        android:layout_alignParentStart="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/donatePlease"
+        android:layout_marginTop="28dp"
+        android:id="@+id/paymentMethod"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/amountPicker"
+        android:layout_above="@+id/progressBar">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/PayPal"
+            android:id="@+id/PayPal"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Direct"
+            android:id="@+id/Direct"
+            android:checked="false" />
+
+    </RadioGroup>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_alignEnd="@+id/donatePlease"
+        android:layout_above="@+id/donateButton"
+        android:layout_alignParentStart="true" />
+
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/amountPicker"
+        android:layout_gravity="right"
+        android:layout_alignTop="@+id/paymentMethod"
+        android:layout_alignEnd="@+id/donatePlease" />
+
 </RelativeLayout>

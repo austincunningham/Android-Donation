@@ -7,10 +7,16 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.util.Log;
 import android.view.View;
+import android.widget.RadioGroup;
+import android.widget.NumberPicker;
+import android.widget.ProgressBar;
 
 public class donate extends AppCompatActivity {
 
     private Button donateButton;
+    private RadioGroup paymentMethod;
+    private ProgressBar progressBar;
+    private NumberPicker amountPicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +24,13 @@ public class donate extends AppCompatActivity {
         setContentView(R.layout.activity_donate);
 
         donateButton = (Button) findViewById(R.id.donateButton);
+        paymentMethod = (RadioGroup) findViewById(R.id.paymentMethod);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        amountPicker = (NumberPicker) findViewById(R.id.amountPicker);
+
+        amountPicker.setMinValue(0);
+        amountPicker.setMaxValue(1000);
+
         if(donateButton != null){
             Log.v("Donate","Really got the donate button");
         }
@@ -32,7 +45,7 @@ public class donate extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_donate,menu);
         return true;
     }*/
-    /*@Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //Handle action bar item clicks here. The action bar will
         //automatically handle clicks on the Home/Up button so long
@@ -44,6 +57,6 @@ public class donate extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }*/
+    }
 
 }
