@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.util.Log;
+import android.view.View;
 
 public class donate extends AppCompatActivity {
 
@@ -20,6 +21,10 @@ public class donate extends AppCompatActivity {
         if(donateButton != null){
             Log.v("Donate","Really got the donate button");
         }
+    }
+    public void donateButtonPressed (View view)
+    {
+        Log.v("Donate", "Donate Pressed!");
     }
     /*@Override
     public boolean onCreateOptionMenu(Menu menu) {
