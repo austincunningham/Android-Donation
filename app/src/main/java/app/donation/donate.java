@@ -1,5 +1,6 @@
 package app.donation;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,6 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.NumberPicker;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 
 public class donate extends AppCompatActivity {
 
@@ -68,7 +70,8 @@ public class donate extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menuReport:
-                Toast.makeText(this, "Report Selected", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "Report Selected", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this,Report.class));
                 break;
         }
         return true;
