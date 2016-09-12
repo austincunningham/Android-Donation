@@ -10,8 +10,7 @@ import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.NumberPicker;
 import android.widget.ProgressBar;
-
-import app.donation.R;
+import android.widget.Toast;
 
 public class donate extends AppCompatActivity {
 
@@ -57,24 +56,22 @@ public class donate extends AppCompatActivity {
         }
         Log.v("Donate", "Donate Pressed! with ammount : " +amount+ " Method : "+method+ "\nTotal Donated : " +totalDonated);
     }
-    /*@Override
-    public boolean onCreateOptionMenu(Menu menu) {
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
         //Inflate the menu, this adds items to the action bar if it is present
         getMenuInflater().inflate(R.menu.menu_donate,menu);
         return true;
-    }*/
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        //Handle action bar item clicks here. The action bar will
-        //automatically handle clicks on the Home/Up button so long
-        //as you specify a parent activity in AndroidManifest.xml
-        int id = item.getItemId();
-
-        //noinspections SimplifiableIfStatement
-        if(id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()){
+            case R.id.menuReport:
+                Toast.makeText(this, "Report Selected", Toast.LENGTH_SHORT).show();
+                break;
         }
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 
 }
