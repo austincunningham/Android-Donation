@@ -12,6 +12,8 @@ import android.widget.RadioGroup;
 import android.widget.NumberPicker;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+import android.widget.TextView;
+import android.widget.EditText;
 
 
 public class donate extends AppCompatActivity {
@@ -21,20 +23,32 @@ public class donate extends AppCompatActivity {
     private ProgressBar progressBar;
     private NumberPicker amountPicker;
     private int totalDonated;
+    private int target;
+    private DonationApp app;
+
+    private TextView amountText;
+    private TextView amountTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donate);
 
+        app = (DonationApp)getApplication();
+
         donateButton = (Button) findViewById(R.id.donateButton);
         paymentMethod = (RadioGroup) findViewById(R.id.paymentMethod);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         amountPicker = (NumberPicker) findViewById(R.id.amountPicker);
+        amountTotal = (TextView) findViewById(R.id.amountTotal);
+        amountText = (EditText) findViewById(R.id.amountText);
 
         amountPicker.setMinValue(0);
         amountPicker.setMaxValue(1000);
         progressBar.setMax(10000);
+
+        totalDonated = 0;
+        target = 10000;
 
         if(donateButton != null){
             Log.v("Donate","Really got the donate button");
@@ -42,21 +56,21 @@ public class donate extends AppCompatActivity {
     }
     public void donateButtonPressed (View view)
     {
-        int amount = amountPicker.getValue();
-        int radioId = paymentMethod.getCheckedRadioButtonId();
-        //progress bar
-        totalDonated = totalDonated + amount;
-        progressBar.setProgress(totalDonated);
-        //radio button
-        //the following can be replaced by the ternary operator
-        //String method = radioId == R.id.PayPal ? "PayPal" : "Direct";
-        String method = "";
-        if(radioId == R.id.PayPal){
-            method = "PayPal";
-        }else {
-            method = "Direct";
+        String method = paymentMethod.getCheckedRadioButtonId() == R.id.PayPal ? "PayPal" : "Direct";
+        int donatedAmount =  amountPicker.getValue();
+        if (donatedAmount == 0)
+        {
+            String text = amountText.getText().toString();
+            if (!text.equals(""))
+                donatedAmount = Integer.parseInt(text);
         }
-        Log.v("Donate", "Donate Pressed! with ammount : " +amount+ " Method : "+method+ "\nTotal Donated : " +totalDonated);
+        if (donatedAmount > 0)
+        {
+            app.newDonation(new Donation(donatedAmount, method));
+            progressBar.setProgress(app.totalDonated);
+            String totalDonatedStr = "$" + app.totalDonated;
+            amountTotal.setText(totalDonatedStr);
+        }
     }
 
     @Override

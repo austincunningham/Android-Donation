@@ -82,4 +82,37 @@
         android:layout_alignTop="@+id/paymentMethod"
         android:layout_alignEnd="@+id/donatePlease" />
 
+    <EditText
+        android:id="@+id/amountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/amountText"
+        android:layout_alignEnd="@+id/progressBar"
+        android:layout_above="@+id/progressBar">
+        <requestFocus />
+    </EditText>
+
+
+    <TextView
+        android:id="@+id/amountTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/donateButton"
+        android:layout_alignRight="@+id/amountText"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/amountTotal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Amount Donated:"
+        android:id="@+id/Amount"
+        android:layout_alignTop="@+id/amountText"
+        android:layout_toStartOf="@+id/amountText"
+        android:layout_alignBottom="@+id/amountText"
+        android:layout_alignEnd="@+id/donateButton" />
+
 </RelativeLayout>
