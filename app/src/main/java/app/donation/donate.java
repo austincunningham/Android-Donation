@@ -68,7 +68,7 @@ public class donate extends AppCompatActivity {
         {
             app.newDonation(new Donation(donatedAmount, method));
             progressBar.setProgress(app.totalDonated);
-            String totalDonatedStr = "$" + app.totalDonated;
+            String totalDonatedStr = "Total so far : $" + app.totalDonated;
             amountTotal.setText(totalDonatedStr);
         }
     }

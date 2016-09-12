@@ -11,4 +11,6 @@
     <string name="initialAmount">Amount</string>
     <string name="amountTotal">Total so far:</string>
     <string name="amountText"></string>
+    <string name="defaultAmount">00</string>
+    <string name="defaultMethod">N/A</string>
 </resources>
