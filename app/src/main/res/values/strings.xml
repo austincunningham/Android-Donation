@@ -16,4 +16,9 @@
     <string name="defaultAmount">00</string>
     <string name="defaultMethod">N/A</string>
     <string name="firstName">First Name</string>
+    <string name="emailLoginTxt">Email :</string>
+    <string name="emailLogin" />
+    <string name="passwordLoginTxt">Password :</string>
+    <string name="loginViewButton">Login</string>
+    <string name="loginHeader">Login</string>
 </resources>

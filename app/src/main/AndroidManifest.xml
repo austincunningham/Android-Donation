@@ -17,13 +17,12 @@
             </intent-filter>
         </activity>
         <activity android:name="app.donation.donate">
-
         </activity>
-        <activity
-            android:name="app.donation.Report"
-            android:label="@string/donateTitle" >
+        <activity android:name="app.donation.Report">
         </activity>
         <activity android:name="app.donation.Signup">
+        </activity>
+        <activity android:name="app.donation.Login">
         </activity>
 
 

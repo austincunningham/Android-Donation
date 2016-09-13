@@ -12,7 +12,7 @@ import android.widget.Button;
  */
 public class Welcome extends AppCompatActivity{
 
-    private Button buttonLogin;
+    private Button loginButton;
     private Button registerButton;
 
     @Override
@@ -20,8 +20,8 @@ public class Welcome extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         registerButton = (Button) findViewById(R.id.registerButton);
-        buttonLogin = (Button) findViewById(R.id.buttonLogin);
-        if (buttonLogin != null) {
+        loginButton = (Button) findViewById(R.id.loginButton);
+        if (loginButton != null) {
             Log.v("Welcome", "Login Pressed!");
         }
         if (registerButton != null) {
@@ -32,7 +32,7 @@ public class Welcome extends AppCompatActivity{
     }
 
     public void loginButtonPressed (View view) {
-        startActivity(new Intent(this,donate.class));
+        startActivity(new Intent(this,Login.class));
     }
 
     public void signupButtonPressed (View view){
