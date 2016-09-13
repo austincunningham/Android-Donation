@@ -7,7 +7,7 @@
         android:layout_width="292dp"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Welcome to Donation App , Click login or signup"
+        android:text="Welcome \n to Donation App , Click login or signup"
         android:id="@+id/textViewWelcome" />
 
     <Button
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SignUp"
-        android:id="@+id/buttonSignUp"
+        android:id="@+id/signUpButton"
         android:onClick="signupButtonPressed"/>
 
 </LinearLayout>

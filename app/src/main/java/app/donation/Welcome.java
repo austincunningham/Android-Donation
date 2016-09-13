@@ -19,15 +19,17 @@ public class Welcome extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        registerButton = (Button) findViewById(R.id.registerButton);
+
         loginButton = (Button) findViewById(R.id.loginButton);
-        if (loginButton != null) {
+        registerButton = (Button) findViewById(R.id.registerButton);
+
+        /*if (loginButton != null) {
             Log.v("Welcome", "Login Pressed!");
         }
         if (registerButton != null) {
             Log.v("Signup", "Signup Pressed!");
         }
-
+*/
 
     }
 
@@ -36,6 +38,6 @@ public class Welcome extends AppCompatActivity{
     }
 
     public void signupButtonPressed (View view){
-        startActivity(new Intent(this,Signup.class));
+       startActivity(new Intent(this,Signup.class));
     }
 }

@@ -20,12 +20,10 @@
         </activity>
         <activity android:name="app.donation.Report">
         </activity>
-        <activity android:name="app.donation.Signup">
-        </activity>
         <activity android:name="app.donation.Login">
         </activity>
-
-
+        <activity android:name="app.donation.Signup">
+        </activity>
     </application>
 
 </manifest>
