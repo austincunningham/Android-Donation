@@ -81,6 +81,7 @@ public class donate extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         //Inflate the menu, this adds items to the action bar if it is present
         getMenuInflater().inflate(R.menu.menu_donate,menu);
+        getMenuInflater().inflate(R.menu.menu_logout,menu);
         return true;
     }
 
@@ -88,8 +89,10 @@ public class donate extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menuReport:
-                //Toast.makeText(this, "Report Selected", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this,Report.class));
+                break;
+            case R.id.menuLogout:
+                startActivity(new Intent(this,Welcome.class));
                 break;
         }
         return true;

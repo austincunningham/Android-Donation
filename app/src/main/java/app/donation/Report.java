@@ -39,6 +39,7 @@ public class Report extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         //Inflate the menu, this adds items to the action bar if it is present
         getMenuInflater().inflate(R.menu.menu_report,menu);
+        getMenuInflater().inflate(R.menu.menu_logout,menu);
         return true;
     }
 
@@ -48,6 +49,9 @@ public class Report extends AppCompatActivity
             case R.id.menuReport:
                 //Toast.makeText(this, "Report Selected", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this,donate.class));
+                break;
+            case R.id.menuLogout:
+                startActivity(new Intent(this,Welcome.class));
                 break;
         }
         return true;
