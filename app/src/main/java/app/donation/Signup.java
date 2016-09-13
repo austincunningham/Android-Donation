@@ -8,34 +8,24 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by austin on 12/09/2016.
+ * Created by austin on 13/09/2016.
  */
-public class Welcome extends AppCompatActivity{
-
-    private Button buttonLogin;
+public class Signup extends AppCompatActivity {
     private Button registerButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
+        setContentView(R.layout.activity_signup);
+
         registerButton = (Button) findViewById(R.id.registerButton);
-        buttonLogin = (Button) findViewById(R.id.buttonLogin);
-        if (buttonLogin != null) {
-            Log.v("Welcome", "Login Pressed!");
-        }
         if (registerButton != null) {
-            Log.v("Signup", "Signup Pressed!");
+            Log.v("Signup", "Register Pressed!");
         }
-
-
     }
 
-    public void loginButtonPressed (View view) {
+    public void registerButtonPressed (View view)
+    {
         startActivity(new Intent(this,donate.class));
-    }
-
-    public void signupButtonPressed (View view){
-        startActivity(new Intent(this,Signup.class));
     }
 }

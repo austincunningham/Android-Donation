@@ -5,6 +5,7 @@
     <string name="donatePlease">Please give  generously</string>
     <string name="donateButton">Donate</string>
     <string name="loginButton">Login</string>
+    <string name="registerButton">Register</string>
     <string name="PayPal">PayPal</string>
     <string name="Direct">Direct</string>
     <string name="menuReport">Report</string>
@@ -14,4 +15,5 @@
     <string name="amountText"></string>
     <string name="defaultAmount">00</string>
     <string name="defaultMethod">N/A</string>
+    <string name="firstName">First Name</string>
 </resources>
