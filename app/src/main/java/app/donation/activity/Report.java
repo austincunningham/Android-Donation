@@ -50,7 +50,7 @@ public class Report extends AppCompatActivity
         switch (item.getItemId()){
             case R.id.menudonate:
                 //Toast.makeText(this, "Report Selected", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(this,donate.class));
+                startActivity(new Intent(this,Donate.class));
                 break;
             case R.id.menuLogout:
                 startActivity(new Intent(this,Welcome.class));

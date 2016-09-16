@@ -21,7 +21,7 @@ import app.donation.main.DonationApp;
 import app.donation.model.Donation;
 
 
-public class donate extends AppCompatActivity {
+public class Donate extends AppCompatActivity {
 
     private Button donateButton;
     private RadioGroup paymentMethod;

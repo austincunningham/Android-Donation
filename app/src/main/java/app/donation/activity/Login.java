@@ -37,7 +37,7 @@ public class Login extends AppCompatActivity {
         TextView password = (TextView) findViewById(R.id.passwordLogin);
 
         if (app.validUser(email.getText().toString(),password.getText().toString())){
-            startActivity(new Intent(this,donate.class));
+            startActivity(new Intent(this,Donate.class));
         } else {
             Toast toast = Toast.makeText(this, "Invalid User name or Password", Toast.LENGTH_SHORT);
                     toast.show();
