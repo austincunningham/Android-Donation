@@ -6,6 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import static android.widget.Toast.*;
 
 /**
  * Created by austin on 13/09/2016.
@@ -26,6 +30,16 @@ public class Login extends AppCompatActivity {
 
     public void loginViewButtonPressed (View view)
     {
-        startActivity(new Intent(this,donate.class));
+        DonationApp app = (DonationApp)getApplication();
+
+        TextView email = (TextView) findViewById(R.id.emailLogin);
+        TextView password = (TextView) findViewById(R.id.passwordLogin);
+
+        if (app.validUser(email.getText().toString(),password.getText().toString())){
+            startActivity(new Intent(this,donate.class));
+        } else {
+            Toast toast = Toast.makeText(this, "Invalid User name or Password", Toast.LENGTH_SHORT);
+                    toast.show();
+        }
     }
 }

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by austin on 12/09/2016.
@@ -34,6 +35,7 @@ public class Welcome extends AppCompatActivity{
     }
 
     public void loginButtonPressed (View view) {
+
         startActivity(new Intent(this,Login.class));
     }
 
