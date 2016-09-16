@@ -1,4 +1,4 @@
-package app.donation;
+package app.donation.model;
 
 /**
  * Created by ictskills on 16/09/16.

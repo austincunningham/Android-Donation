@@ -1,4 +1,4 @@
-package app.donation;
+package app.donation.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static android.widget.Toast.*;
+import app.donation.R;
+import app.donation.main.DonationApp;
 
 /**
  * Created by austin on 13/09/2016.

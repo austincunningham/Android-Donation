@@ -1,4 +1,4 @@
-package app.donation;
+package app.donation.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -11,9 +11,14 @@ import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.NumberPicker;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 import android.widget.TextView;
 import android.widget.EditText;
+
+import app.donation.R;
+import app.donation.activity.Report;
+import app.donation.activity.Welcome;
+import app.donation.main.DonationApp;
+import app.donation.model.Donation;
 
 
 public class donate extends AppCompatActivity {

@@ -1,6 +1,8 @@
-package app.donation;
+package app.donation.activity;
 
 import app.donation.R;
+import app.donation.main.DonationApp;
+import app.donation.model.Donation;
 
 import android.content.Context;
 import android.content.Intent;
@@ -46,7 +48,7 @@ public class Report extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
-            case R.id.menuReport:
+            case R.id.menudonate:
                 //Toast.makeText(this, "Report Selected", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(this,donate.class));
                 break;
