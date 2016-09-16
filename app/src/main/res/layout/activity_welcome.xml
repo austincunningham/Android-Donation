@@ -16,13 +16,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Login"
+        android:text="@string/loginButton"
         android:onClick="loginButtonPressed"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SignUp"
+        android:text="@string/signUpButton"
         android:id="@+id/signUpButton"
         android:onClick="signupButtonPressed"/>
 

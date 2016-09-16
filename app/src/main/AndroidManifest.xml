@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="app.donation.donate">
+        <activity android:name="app.donation.donate"
+            android:label="Donation: Donate">
         </activity>
         <activity android:name="app.donation.Report">
         </activity>

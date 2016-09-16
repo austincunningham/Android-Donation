@@ -5,13 +5,16 @@ import java.util.List;
 
 import android.app.Application;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class DonationApp extends Application
 {
     public final int       target       = 10000;
     public int             totalDonated = 0;
-    public List <Donation> donations    = new ArrayList<Donation>();
+    public List <Donation> donations = new ArrayList<Donation>();
+    public List<User>users = new ArrayList<User>();
 
     public boolean newDonation(Donation donation)
     {
@@ -28,6 +31,12 @@ public class DonationApp extends Application
         }
         return targetAchieved;
     }
+
+    public void newUser(User user){
+        users.add(user);
+    }
+
+
 
     @Override
     public void onCreate()

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Created by austin on 13/09/2016.
@@ -26,6 +27,17 @@ public class Signup extends AppCompatActivity {
 
     public void registerButtonPressed (View view)
     {
-        startActivity(new Intent(this,donate.class));
+        TextView firstName = (TextView) findViewById(R.id.firstName);
+        TextView secondName= (TextView) findViewById(R.id.secondName);
+        TextView email = (TextView) findViewById(R.id.email);
+        TextView password = (TextView) findViewById(R.id.password);
+
+        User user = new User(firstName.getText().toString(), secondName.getText().toString(),
+                email.getText().toString(),password.getText().toString());
+
+        DonationApp app =  (DonationApp) getApplication();
+        app.newUser(user);
+
+        startActivity(new Intent(this,Welcome.class));
     }
 }
