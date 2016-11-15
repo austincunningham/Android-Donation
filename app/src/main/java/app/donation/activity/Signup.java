@@ -1,48 +1,59 @@
 package app.donation.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import app.donation.R;
-import app.donation.activity.Welcome;
 import app.donation.main.DonationApp;
 import app.donation.model.User;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
-/**
- * Created by austin on 13/09/2016.
- */
-public class Signup extends AppCompatActivity {
-    private Button registerButton;
+public class Signup extends AppCompatActivity implements Callback<User>
+{
+    private DonationApp app;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-
-        registerButton = (Button) findViewById(R.id.registerButton);
-        if (registerButton != null) {
-            Log.v("Signup", "Register Pressed!");
-        }
+        app = (DonationApp) getApplication();
     }
 
     public void registerButtonPressed (View view)
     {
-        TextView firstName = (TextView) findViewById(R.id.firstName);
-        TextView secondName= (TextView) findViewById(R.id.secondName);
-        TextView email = (TextView) findViewById(R.id.email);
-        TextView password = (TextView) findViewById(R.id.password);
+        TextView firstName = (TextView)  findViewById(R.id.firstName);
+        TextView lastName  = (TextView)  findViewById(R.id.secondName);
+        TextView email     = (TextView)  findViewById(R.id.email);
+        TextView password  = (TextView)  findViewById(R.id.password);
 
-        User user = new User(firstName.getText().toString(), secondName.getText().toString(),
-                email.getText().toString(),password.getText().toString());
+        User user = new User(firstName.getText().toString(), lastName.getText().toString(), email.getText().toString(), password.getText().toString());
 
-        DonationApp app =  (DonationApp) getApplication();
-        app.newUser(user);
+        DonationApp app = (DonationApp) getApplication();
+        Call<User> call = (Call<User>) app.donationService.createUser(user);
+        call.enqueue(this);
+    }
 
-        startActivity(new Intent(this,Welcome.class));
+    @Override
+    public void onResponse(Call<User> call, Response<User> response)
+    {
+        app.users.add(response.body());
+        startActivity(new Intent(this, Welcome.class));
+    }
+
+    @Override
+    public void onFailure(Call<User> call, Throwable t)
+    {
+        app.donationServiceAvailable = false;
+        Toast toast = Toast.makeText(this, "Donation Service Unavailable. Try again later", Toast.LENGTH_LONG);
+        toast.show();
+        startActivity (new Intent(this, Welcome.class));
     }
 }

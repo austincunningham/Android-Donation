@@ -71,7 +71,7 @@ public class Welcome extends AppCompatActivity implements Callback<List<User>>
         serviceUnavailableMessage();
     }
 
-    public void loginPressed (View view)
+    public void loginButtonPressed (View view)
     {
         if (app.donationServiceAvailable)
         {
@@ -83,7 +83,7 @@ public class Welcome extends AppCompatActivity implements Callback<List<User>>
         }
     }
 
-    public void signupPressed (View view)
+    public void signupButtonPressed (View view)
     {
         if (app.donationServiceAvailable)
         {
