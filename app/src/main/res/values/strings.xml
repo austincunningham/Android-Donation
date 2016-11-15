@@ -24,4 +24,7 @@
     <string name="passwordLoginTxt">Password :</string>
     <string name="loginViewButton">Login</string>
     <string name="loginHeader">Login</string>
+    <string name="amount">Amount</string>
+    <string name="amountSoFarLabel">Ammount so Far:</string>
+
 </resources>
